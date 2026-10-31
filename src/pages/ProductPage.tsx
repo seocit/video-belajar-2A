@@ -2,11 +2,16 @@ import Footer from '#components/Footer'
 import ItemCard from '#components/ItemCard'
 import Button from '#components/shared/Button'
 import VideoCollection from '#components/VideoCollection'
-import { Input, Checkbox, Select } from '@mantine/core'
+import { Input, Checkbox, Select, Modal } from '@mantine/core'
 import { Search, ChevronUp, BookText, ShoppingBag, Clock3, ChevronDown } from 'lucide-react'
+import { useDisclosure } from '@mantine/hooks'
+import ItemForm from '#components/ItemForm'
 import React from 'react'
 
 const ProductPage = () => {
+  const [opened, { open, close }] = useDisclosure(false);
+ 
+
   return (
 
     <>
@@ -65,7 +70,7 @@ const ProductPage = () => {
           {/* product list */}
           <section className=' w-full min-h-screen'>
             <div className='flex gap-3 w-full justify-end'>
-              <Button className='bg-primary py-1 px-4 rounded-xl text-white'>Tambah Item</Button>
+              <Button onClick={open}  className='bg-primary py-1 px-4 rounded-xl text-white'>Tambah Item</Button>
               <Select size='sm'
                 placeholder='Urutkan'
                 rightSection={<ChevronDown size={15} />}
@@ -81,6 +86,9 @@ const ProductPage = () => {
             </div>
           </section>
         </div>
+       <Modal opened={opened} onClose={close} title='Tambah Vidio'>
+        <ItemForm/>
+      </Modal>
       </div>
       <Footer />
 
