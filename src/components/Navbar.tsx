@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
 						<>
 							<div className="hidden md:block">
 								<div className="flex gap-3 text-gray-800/80 items-center">
-									<button type="button">Kategori</button>
+									<Link to="/video-collection" type="button">Kategori</Link>
 									<ProfileMenu />
 								</div>
 							</div>
