@@ -56,7 +56,7 @@ const VideoCollection: React.FC = () => {
 						);
 					})}
 				</ul>
-			</div>9870
+			</div>
 
 			<ItemCard/>
 
